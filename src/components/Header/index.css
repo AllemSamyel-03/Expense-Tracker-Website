@@ -1,0 +1,57 @@
+.header-container {
+  background-color: #ffffff;
+  border-bottom: 1px solid #d9e2ec;
+}
+
+.header-content {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-container {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  background-color: #0f766e;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  font-size: 26px;
+}
+
+.app-heading {
+  margin: 0;
+  color: #172033;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.app-description {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 560px) {
+  .header-content {
+    width: min(100% - 20px, 1120px);
+    min-height: 84px;
+  }
+
+  .app-heading {
+    font-size: 24px;
+  }
+
+  .app-description {
+    font-size: 14px;
+  }
+}

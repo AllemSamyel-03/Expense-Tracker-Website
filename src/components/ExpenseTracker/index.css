@@ -1,0 +1,71 @@
+.expense-tracker-bg-container {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(222, 236, 255, 0.72), rgba(244, 247, 251, 0)),
+    #f4f7fb;
+}
+
+.expense-tracker-container {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 48px;
+}
+
+.expense-content-container {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-top: 24px;
+}
+
+.transactions-section {
+  min-width: 0;
+}
+
+.expenses-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.empty-view-container {
+  margin-top: 16px;
+  padding: 32px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+}
+
+.empty-view-image {
+  width: min(210px, 70%);
+}
+
+.empty-view-heading {
+  margin: 18px 0 8px;
+  color: #172033;
+  font-size: 22px;
+}
+
+.empty-view-description {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 860px) {
+  .expense-content-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .expense-tracker-container {
+    width: min(100% - 20px, 1120px);
+    padding-top: 16px;
+  }
+}

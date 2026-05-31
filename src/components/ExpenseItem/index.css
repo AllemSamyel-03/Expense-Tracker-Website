@@ -1,0 +1,91 @@
+.expense-item {
+  width: 100%;
+  min-height: 76px;
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(88px, max-content) 38px;
+  gap: 12px;
+  align-items: center;
+  overflow: hidden;
+}
+
+.expense-main-details {
+  min-width: 0;
+}
+
+.expense-title {
+  margin: 0;
+  color: #172033;
+  font-size: 16px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.expense-meta {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.transaction-amount {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.income-amount {
+  color: #15803d;
+}
+
+.spend-amount {
+  color: #dc2626;
+}
+
+.delete-button {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 6px;
+  color: #dc2626;
+  background-color: #fee2e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 760px) {
+  .expense-item {
+    grid-template-columns: minmax(0, 1fr) 38px;
+    row-gap: 8px;
+  }
+
+  .transaction-amount {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    text-align: left;
+  }
+
+  .delete-button {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .expense-item {
+    grid-template-columns: 1fr;
+  }
+
+  .delete-button {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    width: 100%;
+  }
+}
