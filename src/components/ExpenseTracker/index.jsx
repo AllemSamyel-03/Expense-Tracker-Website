@@ -7,6 +7,8 @@ import ExpenseFilters from "../ExpenseFilters";
 import ExpenseItem from "../ExpenseItem";
 import "./index.css";
 
+const filterOptions = ["All", "Income", "Expense"];
+
 const initialExpensesList = [
   {
     id: uuidv4(),
@@ -42,7 +44,7 @@ const getStoredExpenses = () => {
 const ExpenseTracker = () => {
   const [expensesList, setExpensesList] = useState(getStoredExpenses());
   const [searchInput, setSearchInput] = useState("");
-  const [activeType, setActiveType] = useState("All");
+  const [activeType, setActiveType] = useState(filterOptions[0]);
 
   useEffect(() => {
     localStorage.setItem("expensesList", JSON.stringify(expensesList));
@@ -82,7 +84,7 @@ const ExpenseTracker = () => {
   );
 
   const filteredExpenses = searchedExpenses.filter((eachExpense) => {
-    if (activeType === "All") {
+    if (activeType === filterOptions[0]) {
       return true;
     }
     return eachExpense.type === activeType;
@@ -132,6 +134,7 @@ const ExpenseTracker = () => {
               activeType={activeType}
               updateActiveType={updateActiveType}
               clearAllExpenses={clearAllExpenses}
+              filterOptions={filterOptions}
               hasExpenses={expensesList.length > 0}
             />
             {renderExpensesList()}

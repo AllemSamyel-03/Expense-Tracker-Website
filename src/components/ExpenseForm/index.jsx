@@ -34,7 +34,7 @@ const ExpenseForm = (props) => {
     event.preventDefault();
 
     if (title.trim() === "" || amount === "" || date === "") {
-      setErrorMsg("Enter title, amount, and date");
+      setErrorMsg("Enter All Fields");
       return;
     }
 

@@ -1,8 +1,6 @@
 import { BsSearch, BsTrash } from "react-icons/bs";
 import "./index.css";
 
-const filterOptions = ["All", "Income", "Expense"];
-
 const ExpenseFilters = (props) => {
   const {
     searchInput,
@@ -10,6 +8,7 @@ const ExpenseFilters = (props) => {
     activeType,
     updateActiveType,
     clearAllExpenses,
+    filterOptions,
     hasExpenses,
   } = props;
 
